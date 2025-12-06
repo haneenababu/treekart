@@ -1,0 +1,590 @@
+.vendor-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 16px 24px; /* subtle page padding for breathing room */
+  background: var(--surface);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+h2, h4 {
+  text-align: center;
+  color: var(--text-dark);
+  text-shadow: 1px 1px 3px rgba(141, 182, 0, 0.4);
+}
+
+/* Professional typography scale */
+.vendor-container h1 { font-size: 1.875rem; line-height: 1.2; letter-spacing: -0.3px; margin: 0 0 12px; font-weight: 800; }
+.vendor-container h2 { font-size: 1.5rem; line-height: 1.3; letter-spacing: -0.2px; margin: 18px 0 10px; font-weight: 700; }
+.vendor-container h3 { font-size: 1.25rem; line-height: 1.35; margin: 16px 0 10px; font-weight: 700; color: var(--text-dark); }
+.vendor-container h4 { font-size: 1.1rem; line-height: 1.4; margin: 14px 0 8px; font-weight: 700; }
+
+/* Layout refinements */
+.vendor-container .search-container { margin: 6px 0 10px; }
+.vendor-container .search-input { font-size: 0.95rem; padding: 10px 12px; }
+.vendor-container .search-btn { font-size: 0.9rem; padding: 8px 12px; }
+
+/* Card polish */
+.tree-card, .fruit-card {
+  border-radius: 16px;
+  padding: 18px;
+}
+.tree-card h5, .fruit-card h5 { font-size: 1.1rem; margin: 8px 0 10px; font-weight: 700; color: var(--text-dark); }
+.tree-card p, .fruit-card p { font-size: 0.95rem; color: #555; }
+
+/* Table polish */
+.table { font-size: 0.95rem; }
+.table th { font-weight: 700; }
+.table td { vertical-align: middle; }
+
+/* Button harmony */
+.btn, .btn-success, .btn-primary, .btn-outline-dark, .btn-outline-success {
+  font-size: 0.95rem;
+}
+
+
+input.form-control {
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px var(--focus-shadow);
+  outline: none;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.card img {
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--primary), #a6c400);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--btn-hover), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--btn-hover), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-outline-dark {
+  border: 2px solid #333;
+  background-color: white;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #333;
+  color: white;
+}
+
+.btn-outline-success {
+  border: 2px solid var(--primary);
+  background-color: white;
+  color: var(--primary);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.row .card {
+  margin-bottom: 20px;
+}
+
+.card-body h5 {
+  color: var(--text-dark);
+  font-weight: bold;
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.badge.bg-success {
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  border-radius: 12px;
+}
+
+.preview-img {
+  max-width: 200px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn-group .btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  background-color: #eee;
+  transition: all 0.3s ease;
+}
+
+.btn-group .btn.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-group .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.tree-list, .fruit-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tree-card, .fruit-card {
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible; /* allow inner payment panel/details to fully show */
+}
+
+.tree-card:hover, .fruit-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(27, 94, 32, 0.25);
+  border-color: var(--primary);
+}
+
+.tree-card img, .fruit-card img {
+  width: 100%;
+  height: auto;            /* allow image to size to content */
+  max-height: 180px;       /* keep images compact without hiding details below */
+  object-fit: contain;     /* avoid cropping important parts */
+  border-radius: 8px;
+}
+
+/* Grid used in My Bids > Accepted - Pending Payment */
+.fruits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  align-items: start;      /* prevent cards from overlapping when content is tall */
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+/* Container */
+
+/* Tabs */
+.btn-group {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #eee;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn.active {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Search Box */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  margin: 15px 0;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-input:focus {
+  border-color: var(--btn-hover);
+  box-shadow: 0 0 6px var(--focus-shadow);
+}
+
+/* Tree Cards */
+.tree-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.tree-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tree-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tree-card h4 {
+  margin: 10px 0;
+  color: var(--primary);
+}
+
+.tree-card button {
+  padding: 8px 12px;
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tree-card button:hover {
+  background: var(--btn-hover);
+}
+
+.search-container {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.search-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  line-height: 1;
+}
+
+.search-btn:hover {
+  background: var(--btn-hover);
+}
+
+.booked-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tree-card.booked {
+  background: #fff;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.tree-card.booked:hover {
+  transform: scale(1.02);
+}
+
+.tree-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.tree-title {
+  font-size: 20px;
+  color: #2e7d32;
+  margin: 5px 0;
+}
+
+.tree-rent {
+  font-weight: bold;
+  color: #333;
+}
+
+.booking-details h5 {
+  margin-top: 10px;
+  color: #444;
+}
+
+.booking-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.booking-details ul li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+.order-card {
+  border: 1px solid #4caf50;
+  padding: 10px;       /* slightly less padding */
+  margin: 8px 0;       /* smaller margin */
+  border-radius: 8px;
+  background-color: #f0fff0;
+  max-width: 400px;    /* restrict width */
+  width: 100%;         /* allow responsiveness */
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #4caf50;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+}
+
+.order-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;           /* add spacing between left and right */
+}
+
+.order-left, .order-right {
+  flex: none;           /* prevent them from stretching */
+  width: 48%;           /* almost half each */
+  min-width: 120px;     /* smaller minimum width */
+}
+
+.order-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+.order-card {
+  border: 1px solid #4caf50;
+  padding: 10px;        /* reduce padding */
+  margin: 8px auto;     /* center and reduce margin */
+  border-radius: 8px;
+  background-color: #f0fff0;
+  max-width: 400px;     /* keep card compact */
+  width: 100%;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #4caf50;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
+}
+
+.order-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;    /* keep left and right side by side */
+  gap: 10px;
+}
+
+.order-left, .order-right {
+  flex: 1;
+  min-width: 150px;    /* smaller min width */
+}
+
+.order-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Bid Sections */
+.bids-section {
+  margin: 20px 0;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bids-section h4 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.bid-card {
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: #f9f9f9;
+}
+
+.bid-card.pending {
+  border-color: var(--muted-grey);
+  background: #f3f4f6;
+}
+
+.bid-card.accepted {
+  border-color: var(--primary);
+  background: #f2f9c7;
+}
+
+.bid-card.rejected {
+  border-color: #9aa0a6;
+  background: #f3f4f6;
+}
+
+.bid-card h5 {
+  margin-top: 0;
+  color: #333;
+}
+
+.bid-card p {
+  margin: 5px 0;
+}
+
+.status-pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.status-accepted {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.vendor-phone-input {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vendor-phone-input input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.vendor-phone-input button {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.vendor-phone-input button:hover {
+  background: var(--btn-hover);
+}
+
+.vendor-details-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+}
+
+/* Booked Trees Section */
+.booked-trees-section {
+  margin-top: 20px;
+}
+
+.tree-card.booked {
+  background: linear-gradient(135deg, #f2f9c7, #e9f7aa);
+  border: 3px solid var(--primary);
+  position: relative;
+}
+
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.status-badge.accepted {
+  background: var(--primary);
+  color: white;
+}
+
+.tree-card.booked hr {
+  border: none;
+  border-top: 2px solid var(--primary);
+  margin: 15px 0;
+}
